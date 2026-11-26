@@ -3952,6 +3952,209 @@ html[data-theme="dark"] .sw-chat-wa-link {
   }
 }
 
+/* ==========================================================================
+   First-Visit Welcome Auth Modal (Sign In / Create Account / Guest)
+   ========================================================================== */
+body.sw-auth-modal-open {
+  overflow: hidden;
+}
 
+.sw-auth-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(8, 22, 48, 0.72);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
 
+.sw-auth-modal-overlay.is-open {
+  opacity: 1;
+}
+
+.sw-auth-modal {
+  width: 100%;
+  max-width: 470px;
+  max-height: calc(100vh - 2rem);
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  color: #162338;
+  border-radius: 16px;
+  border-top: 4px solid #ffcc33;
+  box-shadow: 0 24px 60px rgba(7, 20, 44, 0.36);
+  overflow: hidden;
+  transform: translateY(12px) scale(0.985);
+  transition: transform 0.22s ease;
+}
+
+.sw-auth-modal-overlay.is-open .sw-auth-modal {
+  transform: translateY(0) scale(1);
+}
+
+.sw-auth-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, #0c4da2 0%, #1e73be 100%);
+  color: #ffffff;
+}
+
+.sw-auth-modal-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ffcc33;
+}
+
+.sw-auth-modal-title {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.sw-auth-modal-close {
+  border: 0;
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease;
+}
+
+.sw-auth-modal-close:hover,
+.sw-auth-modal-close:focus {
+  background: rgba(255, 255, 255, 0.28);
+  outline: none;
+}
+
+.sw-auth-modal-body {
+  padding: 1.2rem 1.35rem 1.1rem;
+  overflow-y: auto;
+}
+
+.sw-auth-modal-intro {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #475569;
+  margin-bottom: 0.95rem;
+}
+
+.sw-auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  background: #eef3fa;
+  border-radius: 10px;
+}
+
+.sw-auth-tab {
+  border: 0;
+  background: transparent;
+  color: #334155;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.52rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.sw-auth-tab.active {
+  background: #1e73be;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(30, 115, 190, 0.28);
+}
+
+.sw-auth-submit-btn {
+  font-weight: 700;
+  padding: 0.62rem 1rem;
+  border-radius: 8px;
+}
+
+.sw-auth-modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  padding: 0.8rem 1.35rem;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.sw-auth-modal-links a {
+  color: #1e73be;
+  font-weight: 600;
+}
+
+html[data-theme="dark"] .sw-auth-modal {
+  background: #0f172a;
+  color: #f8fafc;
+  border-left: 1px solid #1e293b;
+  border-right: 1px solid #1e293b;
+  border-bottom: 1px solid #1e293b;
+}
+
+html[data-theme="dark"] .sw-auth-modal-intro {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .sw-auth-tabs {
+  background: #17253e;
+}
+
+html[data-theme="dark"] .sw-auth-tab {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .sw-auth-tab.active {
+  background: #1e73be;
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .sw-auth-modal-footer {
+  background: #0b1220;
+  border-top-color: #1e293b;
+}
+
+html[data-theme="dark"] .sw-auth-modal-links a {
+  color: #93c5fd;
+}
+
+@media (max-width: 575.98px) {
+  .sw-auth-modal-overlay {
+    padding: 0.65rem;
+  }
+  .sw-auth-modal-header {
+    padding: 0.85rem 1rem;
+  }
+  .sw-auth-modal-body {
+    padding: 1rem 1rem 0.9rem;
+  }
+  .sw-auth-modal-footer {
+    padding: 0.75rem 1rem;
+    justify-content: center;
+    text-align: center;
+  }
+}
 

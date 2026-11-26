@@ -9,6 +9,7 @@
 
 import { supabase } from './supabaseClient.js';
 import { clearClientAuthStorage, createEl, getSessionAndProfile, signOutAndRedirect } from './auth.js';
+import { closeWelcomeAuthModal, initWelcomeAuthPrompt } from './authPrompt.js?v=20261126c';
 
 function makeAuthListItem(node) {
   const li = createEl('li', 'nav-item ml-lg-2 mt-2 mt-lg-0');
@@ -123,9 +124,20 @@ async function initNavigation() {
   const { user, profile } = await getSessionAndProfile();
   renderAuthNavItems(user, profile, currentPage);
 
+  // Prompt first-time / unauthenticated visitors on public pages to Sign In or Create Account
+  initWelcomeAuthPrompt({
+    currentPage,
+    user,
+    onAuthSuccess: (updated) => {
+      renderAuthNavItems(updated?.user || null, updated?.profile || null, currentPage);
+    },
+  });
+
   supabase.auth.onAuthStateChange(async (event) => {
     if (event === 'SIGNED_OUT') {
       clearClientAuthStorage();
+    } else if (event === 'SIGNED_IN') {
+      closeWelcomeAuthModal({ rememberGuest: false });
     }
     const updated = await getSessionAndProfile();
     renderAuthNavItems(updated.user, updated.profile, currentPage);
