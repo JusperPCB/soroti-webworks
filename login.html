@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Client Login | SOROTI WebWorks</title>
+  <meta name="description" content="Log in to your SOROTI WebWorks client or administrator account powered by Supabase Auth.">
+  <link rel="icon" href="assets/kahawa-connect-icon.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap">
+  <link rel="stylesheet" href="atlantis-lite/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="atlantis-lite/assets/css/atlantis.min.css">
+  <link rel="stylesheet" href="atlantis-lite/assets/css/fonts.min.css">
+  <link rel="stylesheet" href="css/site.css?v=20261126b">
+  <script src="js/theme.js"></script>
+</head>
+<body class="sw-public-body" data-page="login">
+  <a class="sw-skip-link" href="#mainContent">Skip to main content</a>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark sw-navbar" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand sw-brand" href="index.html">
+          <span class="sw-brand-mark" aria-hidden="true">SW</span>
+          <span>
+            SOROTI WebWorks
+            <span class="sw-brand-sub">Pursuing Digital Excellence</span>
+          </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#swMainNav"
+          aria-controls="swMainNav" aria-expanded="false" aria-label="Toggle navigation menu">
+          <i class="fas fa-bars mr-1" aria-hidden="true"></i>Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="swMainNav">
+          <ul class="navbar-nav ml-auto align-items-lg-center">
+            <li class="nav-item" data-nav="home"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item" data-nav="about"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item" data-nav="projects"><a class="nav-link" href="projects.html">Projects</a></li>
+            <li class="nav-item" data-nav="services"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item" data-nav="contact"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item ml-lg-2 mt-2 mt-lg-0" data-auth-slot="guest">
+              <a class="btn btn-primary btn-sm mr-2" href="login.html" aria-current="page">Client Login</a>
+            </li>
+            <li class="nav-item mt-2 mt-lg-0" data-auth-slot="guest">
+              <a class="btn btn-outline-royal btn-sm" href="register.html">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="mainContent" class="sw-main">
+    <section class="sw-section sw-auth-stage">
+      <div class="sw-hero-video-wrap" aria-hidden="true">
+        <video class="sw-page-bg-video" autoplay muted loop playsinline poster="assets/kahawa-motion-poster.png">
+          <source src="assets/kahawa-motion-bg.webm" type="video/webm">
+        </video>
+        <div class="sw-auth-stage-scrim"></div>
+      </div>
+      <div class="container sw-hero-content">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-5">
+            <div id="loginStatusBanner" class="alert d-none mb-3" role="status" aria-live="polite"></div>
+
+            <!-- Shown if user already has an active session -->
+            <div id="alreadyLoggedInCard" class="card sw-auth-card d-none mb-4">
+              <div class="card-body p-4">
+                <span class="sw-eyebrow mb-2">Active Session</span>
+                <h1 class="h4 mb-2">You Are Already Signed In</h1>
+                <p class="mb-3">
+                  Signed in as <strong id="activeUserName"></strong> (<span id="activeUserEmail"></span>)
+                  with role <span id="activeUserRole" class="badge badge-primary"></span>.
+                </p>
+                <div class="d-flex flex-wrap">
+                  <a id="activeSiteBtn" href="index.html" class="btn btn-primary mr-2 mb-2">Go to Website</a>
+                  <a href="profile.html" class="btn btn-outline-royal mr-2 mb-2">My Profile</a>
+                  <a id="activeAdminDashBtn" href="dashboard.html" class="btn btn-primary mr-2 mb-2 d-none">
+                    Admin Dashboard
+                  </a>
+                  <button type="button" id="activeLogoutBtn" class="btn btn-outline-danger mb-2">
+                    Log Out
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Login Form Card -->
+            <div id="loginCard" class="card sw-auth-card mb-0">
+              <div class="card-body p-4">
+                <div class="mb-3">
+                  <h1 class="h3 mb-1">Client Login</h1>
+                  <p class="text-muted mb-0">
+                    Sign in to access your SOROTI WebWorks client profile, web service orders, or admin dashboard.
+                  </p>
+                </div>
+
+                <form id="loginForm" autocomplete="on" novalidate>
+                  <div class="form-group">
+                    <label for="loginEmail" class="sw-form-label">
+                      Email Address <span class="sw-required-mark">*</span>
+                    </label>
+                    <input type="email" id="loginEmail" name="email" class="form-control"
+                      required autocomplete="username" inputmode="email" spellcheck="false" autocapitalize="none"
+                      placeholder="you@example.com" aria-describedby="loginEmailError">
+                    <div id="loginEmailError" class="invalid-feedback"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="loginPassword" class="sw-form-label">
+                      Password <span class="sw-required-mark">*</span>
+                    </label>
+                    <div class="input-group">
+                      <input type="password" id="loginPassword" name="password" class="form-control"
+                        required minlength="8" autocomplete="current-password"
+                        placeholder="Minimum 8 characters" aria-describedby="loginPasswordError">
+                      <div class="input-group-append">
+                        <button type="button" id="toggleLoginPassword" class="btn btn-outline-secondary sw-password-toggle"
+                          data-toggle-password="loginPassword"
+                          aria-label="Show password" aria-pressed="false" title="Show password">
+                          <i class="fas fa-eye" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                      <div id="loginPasswordError" class="invalid-feedback"></div>
+                    </div>
+                  </div>
+
+                  <button type="submit" id="loginSubmitBtn" class="btn btn-primary btn-block mt-4">
+                    <i class="fas fa-sign-in-alt mr-2" aria-hidden="true"></i>Sign In
+                  </button>
+
+                  <div id="loginFeedback" class="alert d-none mt-3 mb-0" role="alert" aria-live="polite"></div>
+
+                  <div id="resendWrap" class="mt-3 d-none">
+                    <button type="button" id="resendConfirmBtn" class="btn btn-outline-royal btn-sm btn-block">
+                      Resend Confirmation Email
+                    </button>
+                  </div>
+                </form>
+
+                <hr class="my-4">
+
+                <div class="text-center">
+                  <p class="mb-2 text-muted">New client or learner in Soroti?</p>
+                  <a id="loginRegisterLink" href="register.html" class="btn btn-outline-royal btn-sm">
+                    Create a Client Account
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="sw-studio-bar" aria-label="Studio location and direct contact">
+    <div class="container sw-studio-bar-inner">
+      <div>
+        <i class="fas fa-map-marker-alt mr-2" aria-hidden="true"></i>
+        <span>Plot 14, Gweri Road, Central Ward, Soroti City East</span>
+      </div>
+      <div class="sw-studio-links">
+        <a href="projects.html#kahawa-connect">Kahawa Connect R&amp;D</a>
+        <span class="sw-studio-sep" aria-hidden="true"></span>
+        <a href="services.html">Web Services &amp; Packages</a>
+        <span class="sw-studio-sep" aria-hidden="true"></span>
+        <a href="mailto:tjusper02@gmail.com">
+          <i class="fas fa-envelope mr-1" aria-hidden="true"></i>tjusper02@gmail.com
+        </a>
+        <span class="sw-studio-sep" aria-hidden="true"></span>
+        <span>
+          <i class="fas fa-phone mr-1" aria-hidden="true"></i>
+          <a href="tel:+256789939643">0789939643</a> / <a href="tel:+256794030168">0794030168</a>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="sw-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h2>QUICK LINKS</h2>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="index.html">Home</a></li>
+            <li class="mb-2"><a href="about.html">About SOROTI WebWorks</a></li>
+            <li class="mb-2"><a href="projects.html">Projects Completed</a></li>
+            <li class="mb-2"><a href="services.html">Web Services &amp; Pricing</a></li>
+            <li><a href="contact.html">Contact Studio</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h3>CONTACT US</h3>
+          <p class="mb-2">Plot 14, Gweri Road, Central Ward</p>
+          <p class="mb-2">Soroti City East, Soroti, Uganda</p>
+          <p class="mb-2">Tel: <a href="tel:+256789939643">0789939643</a> / <a href="tel:+256794030168">0794030168</a></p>
+          <p class="mb-0">Email: <a href="mailto:tjusper02@gmail.com">tjusper02@gmail.com</a></p>
+        </div>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h3>FIND MORE</h3>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="services.html#packages">Starter, Growth &amp; E-Commerce Tiers</a></li>
+            <li class="mb-2"><a href="services.html?category=Core%20Web">Business Brochure &amp; Redesigns</a></li>
+            <li class="mb-2"><a href="services.html?category=E-Commerce%20%26%20Apps">Mobile Money &amp; School Portals</a></li>
+            <li class="mb-2"><a href="projects.html#kahawa-connect">Kahawa Connect (EUDR 2026)</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>PORTALS &amp; ACCOUNT</h3>
+          <ul class="list-unstyled mb-2">
+            <li class="mb-2"><a href="login.html">Client Login</a></li>
+            <li><a href="register.html">Register Client Account</a></li>
+          </ul>
+          <p class="mb-0 small">Pursuing Digital Excellence in Eastern Uganda.</p>
+        </div>
+      </div>
+
+      <div class="sw-footer-bottom d-flex flex-wrap justify-content-center align-items-center text-center">
+        <div>&copy; <span id="footerYear">2026</span> SOROTI WebWorks — Twinamasiko Jusper. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="atlantis-lite/assets/js/core/jquery.3.2.1.min.js"></script>
+  <script src="atlantis-lite/assets/js/core/popper.min.js"></script>
+  <script src="atlantis-lite/assets/js/core/bootstrap.min.js"></script>
+  <script src="js/passwordToggle.js" defer></script>
+  <script type="module" src="js/nav.js"></script>
+  <script type="module" src="js/login.js"></script>
+</body>
+</html>

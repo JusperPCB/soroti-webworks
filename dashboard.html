@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Members &amp; Admin Dashboard | SOROTI WebWorks</title>
+  <meta name="description" content="SOROTI WebWorks dashboard showing registered users and administrator management tools.">
+  <link rel="icon" href="assets/kahawa-connect-icon.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap">
+  <link rel="stylesheet" href="atlantis-lite/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="atlantis-lite/assets/css/atlantis.min.css">
+  <link rel="stylesheet" href="atlantis-lite/assets/css/fonts.min.css">
+  <link rel="stylesheet" href="css/site.css?v=20261126b">
+  <script src="js/theme.js"></script>
+</head>
+<body data-member-page="dashboard">
+  <div class="wrapper">
+    <div class="main-header">
+      <div class="logo-header" data-background-color="blue">
+        <a href="index.html" class="logo sw-member-logo-link">
+          <span class="sw-member-logo-badge" aria-hidden="true">SW</span>
+          <span>SOROTI WebWorks</span>
+        </a>
+        <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
+          data-target="collapse" aria-expanded="false" aria-label="Toggle sidebar navigation">
+          <span class="navbar-toggler-icon">
+            <i class="icon-menu" aria-hidden="true"></i>
+          </span>
+        </button>
+        <button class="topbar-toggler more" type="button" aria-label="Toggle topbar actions">
+          <i class="icon-options-vertical" aria-hidden="true"></i>
+        </button>
+        <div class="nav-toggle">
+          <button class="btn btn-toggle toggle-sidebar" type="button" aria-label="Collapse sidebar">
+            <i class="icon-menu" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2" aria-label="Dashboard topbar">
+        <div class="container-fluid">
+          <div class="text-white font-weight-bold d-none d-sm-block">
+            Members &amp; Admin Dashboard
+          </div>
+          <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+            <li class="nav-item mr-2">
+              <a class="nav-link text-white" href="index.html" title="Return to Public Site">
+                <i class="fas fa-home mr-1" aria-hidden="true"></i>
+                <span class="d-none d-md-inline">Public Site</span>
+              </a>
+            </li>
+            <li class="nav-item mr-2">
+              <button type="button" class="btn btn-outline-light btn-sm sw-theme-toggle" data-action="toggle-theme" aria-label="Switch to Dark Mode" aria-pressed="false">
+                <i class="fas fa-moon mr-1" aria-hidden="true"></i>
+                <span class="d-none d-sm-inline">Dark Mode</span>
+              </button>
+            </li>
+            <li class="nav-item dropdown hidden-caret">
+              <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false" aria-label="Account menu">
+                <div class="avatar-sm">
+                  <span class="avatar-title rounded-circle sw-avatar-royal" data-member-initials>SW</span>
+                </div>
+              </a>
+              <ul class="dropdown-menu dropdown-user animated fadeIn">
+                <div class="dropdown-user-scroll scrollbar-outer">
+                  <li>
+                    <div class="user-box">
+                      <div class="avatar-lg">
+                        <span class="avatar-title rounded sw-avatar-royal" data-member-initials>SW</span>
+                      </div>
+                      <div class="u-text">
+                        <h4 data-member-name>Member</h4>
+                        <p class="text-muted mb-1" data-member-email></p>
+                        <span class="badge badge-primary" data-member-role>Client</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="dashboard.html">Dashboard</a>
+                    <div class="dropdown-divider"></div>
+                    <button type="button" class="dropdown-item text-danger" data-action="logout">
+                      <i class="fas fa-sign-out-alt mr-2" aria-hidden="true"></i>Logout
+                    </button>
+                  </li>
+                </div>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="sidebar sidebar-style-2">
+      <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+          <div class="user">
+            <div class="avatar-sm float-left mr-2">
+              <span class="avatar-title rounded-circle sw-avatar-royal" data-member-initials>SW</span>
+            </div>
+            <div class="info">
+              <a href="profile.html" aria-expanded="true">
+                <span>
+                  <span data-member-name>Member</span>
+                  <span class="user-level" data-member-role>Client</span>
+                </span>
+              </a>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <ul class="nav nav-primary">
+            <li class="nav-item" data-member-nav="profile">
+              <a href="profile.html">
+                <i class="fas fa-user" aria-hidden="true"></i>
+                <p>My Profile</p>
+              </a>
+            </li>
+            <li class="nav-item" data-member-nav="dashboard">
+              <a href="dashboard.html">
+                <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-section">
+              <span class="sidebar-mini-icon"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></span>
+              <h4 class="text-section">Public Pages</h4>
+            </li>
+            <li class="nav-item">
+              <a href="index.html">
+                <i class="fas fa-home" aria-hidden="true"></i>
+                <p>Home Page</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html">
+                <i class="fas fa-folder-open" aria-hidden="true"></i>
+                <p>Projects Completed</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html">
+                <i class="fas fa-layer-group" aria-hidden="true"></i>
+                <p>Web Services</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <p>Contact Us</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" data-action="toggle-theme" aria-label="Switch to Dark Mode" aria-pressed="false">
+                <i class="fas fa-moon" aria-hidden="true"></i>
+                <p>Dark Mode</p>
+              </a>
+            </li>
+            <li class="nav-item mt-3">
+              <a href="#" data-action="logout" class="text-danger">
+                <i class="fas fa-sign-out-alt text-danger" aria-hidden="true"></i>
+                <p class="text-danger">Logout</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-panel">
+      <div class="content">
+        <div class="panel-header sw-member-panel-header">
+          <div class="page-inner py-4">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+              <div>
+                <div class="d-flex align-items-center mb-1">
+                  <span class="sw-ta-live-pill mr-2">
+                    <span class="sw-ta-live-dot" aria-hidden="true"></span>Live Supabase RLS
+                  </span>
+                  <span class="text-white-50 small">Soroti Studio Console</span>
+                </div>
+                <h1 class="text-white pb-1 fw-bold h2 mb-0">Members &amp; Admin Analytics</h1>
+                <h2 class="text-white op-8 mb-2 mb-md-0 h6 font-weight-normal">
+                  Real-time service package demand, online UGX settlements, registered clients, and studio inquiries.
+                </h2>
+              </div>
+              <div class="ml-md-auto py-2 py-md-0 d-flex flex-wrap align-items-center">
+                <button type="button" id="dashRefreshBtn" class="btn btn-outline-light btn-sm mr-2 mb-1 mb-sm-0">
+                  <i class="fas fa-sync-alt mr-1" aria-hidden="true"></i>Refresh
+                </button>
+                <a href="profile.html" class="btn btn-light btn-sm mr-2 mb-1 mb-sm-0">My Profile</a>
+                <button type="button" class="btn btn-outline-light btn-sm mb-1 mb-sm-0" data-action="logout">Logout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-inner mt--4">
+          <div id="dashLoading" class="card sw-ta-card mb-4" role="status">
+            <div class="card-body d-flex align-items-center text-muted">
+              <div class="spinner-border spinner-border-sm text-primary mr-3" role="presentation"></div>
+              <span>Loading dashboard data...</span>
+            </div>
+          </div>
+
+          <div id="dashContent" class="d-none">
+            <div id="clientRoleNotice" class="alert alert-info d-none mb-4" role="status"></div>
+
+            <!-- Row 1: TailAdmin-Style 4 KPI Cards -->
+            <div class="row">
+              <div class="col-sm-6 col-xl-3 mb-4">
+                <div class="card sw-ta-kpi-card h-100 mb-0">
+                  <div class="card-body">
+                    <div class="sw-ta-kpi-icon sw-ta-icon-blue mb-3" aria-hidden="true">
+                      <i class="fas fa-users"></i>
+                    </div>
+                    <div class="text-muted small font-weight-bold text-uppercase">Registered Users</div>
+                    <div class="d-flex flex-wrap align-items-end justify-content-between sw-ta-kpi-valrow mt-2">
+                      <h3 id="statUsersCount" class="h2 font-weight-bold mb-0 sw-ta-tabular">0</h3>
+                      <span id="kpiUsersTrend" class="sw-ta-pill sw-ta-pill-info">0 Client</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-xl-3 mb-4">
+                <div class="card sw-ta-kpi-card h-100 mb-0">
+                  <div class="card-body">
+                    <div class="sw-ta-kpi-icon sw-ta-icon-emerald mb-3" aria-hidden="true">
+                      <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="text-muted small font-weight-bold text-uppercase">Service Orders</div>
+                    <div class="d-flex flex-wrap align-items-end justify-content-between sw-ta-kpi-valrow mt-2">
+                      <h3 id="statEnrollmentsCount" class="h2 font-weight-bold mb-0 sw-ta-tabular">0</h3>
+                      <span id="kpiEnrollTrend" class="sw-ta-pill sw-ta-pill-success">0 Confirmed</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-xl-3 mb-4">
+                <div class="card sw-ta-kpi-card h-100 mb-0">
+                  <div class="card-body">
+                    <div class="sw-ta-kpi-icon sw-ta-icon-amber mb-3" aria-hidden="true">
+                      <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="text-muted small font-weight-bold text-uppercase">Collected Revenue</div>
+                    <div class="d-flex flex-wrap align-items-end justify-content-between sw-ta-kpi-valrow mt-2">
+                      <h3 id="statRevenueUgx" class="h2 font-weight-bold mb-0 sw-ta-tabular">UGX 0</h3>
+                      <span id="kpiRevenueTrend" class="sw-ta-pill sw-ta-pill-warning">
+                        <span id="statProjectsCount">0</span> Projects
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-xl-3 mb-4">
+                <div class="card sw-ta-kpi-card h-100 mb-0">
+                  <div class="card-body">
+                    <div class="sw-ta-kpi-icon sw-ta-icon-indigo mb-3" aria-hidden="true">
+                      <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="text-muted small font-weight-bold text-uppercase">Unread Messages</div>
+                    <div class="d-flex flex-wrap align-items-end justify-content-between sw-ta-kpi-valrow mt-2">
+                      <h3 id="statMessagesCount" class="h2 font-weight-bold mb-0 sw-ta-tabular">0</h3>
+                      <span id="kpiMessagesTrend" class="sw-ta-pill sw-ta-pill-neutral">Inbox</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 2: TailAdmin Primary Chart Grid (Bar Chart + Radial Target Gauge) -->
+            <div class="row">
+              <div class="col-xl-8 mb-4">
+                <div class="card sw-ta-card h-100 mb-0">
+                  <div class="card-header d-flex flex-wrap align-items-center justify-content-between">
+                    <div>
+                      <div class="card-title mb-0">Service Orders &amp; Monthly Activity</div>
+                      <small class="text-muted">Live client registrations vs web service bookings</small>
+                    </div>
+                    <div class="sw-ta-seg-group mt-2 mt-sm-0" role="group" aria-label="Chart view selector">
+                      <button type="button" class="sw-ta-seg-btn is-active" data-dash-bar-mode="monthly">Monthly</button>
+                      <button type="button" class="sw-ta-seg-btn" data-dash-bar-mode="level">By Category</button>
+                    </div>
+                  </div>
+                  <div class="card-body position-relative" id="dashBarChartBox">
+                    <p class="text-muted small mb-0">Rendering chart...</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-4 mb-4">
+                <div class="card sw-ta-card h-100 mb-0">
+                  <div class="card-header">
+                    <div class="card-title mb-0">Settlement &amp; Delivery Target</div>
+                    <small class="text-muted">Paid &amp; confirmed orders ratio</small>
+                  </div>
+                  <div class="card-body d-flex flex-column justify-content-between" id="dashGaugeBox">
+                    <p class="text-muted small mb-0">Rendering gauge...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 3: TailAdmin Growth Area Chart + Payment Mix Donut -->
+            <div class="row">
+              <div class="col-xl-7 mb-4">
+                <div class="card sw-ta-card h-100 mb-0">
+                  <div class="card-header d-flex flex-wrap align-items-center justify-content-between">
+                    <div>
+                      <div class="card-title mb-0">6-Month Growth Statistics</div>
+                      <small class="text-muted">Account signups compared against applications &amp; inquiries</small>
+                    </div>
+                    <span class="sw-ta-pill sw-ta-pill-info mt-1 mt-sm-0">6-Month Window</span>
+                  </div>
+                  <div class="card-body position-relative" id="dashAreaChartBox">
+                    <p class="text-muted small mb-0">Rendering trend...</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-5 mb-4">
+                <div class="card sw-ta-card h-100 mb-0">
+                  <div class="card-header d-flex flex-wrap align-items-center justify-content-between">
+                    <div>
+                      <div class="card-title mb-0">Payment Channel &amp; Status Mix</div>
+                      <small class="text-muted">Online payment, Pay on Arrival &amp; unpaid breakdown</small>
+                    </div>
+                  </div>
+                  <div class="card-body position-relative d-flex flex-column justify-content-center" id="dashDonutChartBox">
+                    <p class="text-muted small mb-0">Rendering breakdown...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 4: Registered Users Section -->
+            <div class="card sw-ta-card mb-4">
+              <div class="card-header d-flex flex-wrap align-items-center justify-content-between">
+                <div>
+                  <div class="card-title mb-0">Registered Users</div>
+                  <small class="text-muted">Manage client and administrator access in Supabase</small>
+                </div>
+                <div class="mt-2 mt-sm-0 sw-ta-search-wrap">
+                  <label for="dashUserSearch" class="sr-only">Filter registered users</label>
+                  <input type="search" id="dashUserSearch" class="form-control form-control-sm"
+                    placeholder="Search name, email, or org...">
+                </div>
+              </div>
+              <div class="card-body">
+                <div id="dashActionFeedback" class="alert d-none mb-3" role="status" aria-live="polite"></div>
+                <div class="table-responsive">
+                  <table class="table table-hover sw-ta-table mb-0">
+                    <thead>
+                      <tr>
+                        <th scope="col">User</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Organisation</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Joined</th>
+                        <th scope="col" id="usersActionColHead" class="d-none">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="usersTableBody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 5: Admin Service Orders & Contact Messages -->
+            <div id="adminSection" class="d-none">
+              <div class="row">
+                <div class="col-lg-6 mb-4">
+                  <div class="card sw-ta-card mb-0 h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <div>
+                        <div class="card-title mb-0">Admin: Service Orders &amp; Bookings</div>
+                        <small class="text-muted">Review service requests &amp; UGX payments</small>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table table-sm sw-ta-table mb-0">
+                          <thead>
+                            <tr>
+                              <th scope="col">Client</th>
+                              <th scope="col">Service / Package</th>
+                              <th scope="col">Payment</th>
+                              <th scope="col">Status</th>
+                            </tr>
+                          </thead>
+                          <tbody id="adminEnrollmentsBody"></tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                  <div class="card sw-ta-card mb-0 h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <div>
+                        <div class="card-title mb-0">Admin: Contact Messages</div>
+                        <small class="text-muted">Studio inquiries from contact.html</small>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table table-sm sw-ta-table mb-0">
+                          <thead>
+                            <tr>
+                              <th scope="col">Sender</th>
+                              <th scope="col">Subject &amp; Message</th>
+                              <th scope="col">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody id="adminMessagesBody"></tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="container-fluid">
+          <nav class="pull-left" aria-label="Footer links">
+            <ul class="nav">
+              <li class="nav-item"><a class="nav-link" href="index.html">SOROTI WebWorks</a></li>
+              <li class="nav-item"><a class="nav-link" href="profile.html">My Profile</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="copyright ml-auto">
+            &copy; <span id="footerYear">2026</span> SOROTI WebWorks — Twinamasiko Jusper. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="atlantis-lite/assets/js/core/jquery.3.2.1.min.js"></script>
+  <script src="atlantis-lite/assets/js/core/popper.min.js"></script>
+  <script src="atlantis-lite/assets/js/core/bootstrap.min.js"></script>
+  <script src="atlantis-lite/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <script src="atlantis-lite/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="atlantis-lite/assets/js/atlantis.min.js"></script>
+  <script src="js/dashboardCharts.js"></script>
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

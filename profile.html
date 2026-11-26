@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>My Profile | SOROTI WebWorks Members Area</title>
+  <meta name="description" content="Manage your SOROTI WebWorks registered client profile and web service bookings.">
+  <link rel="icon" href="assets/kahawa-connect-icon.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap">
+  <link rel="stylesheet" href="atlantis-lite/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="atlantis-lite/assets/css/atlantis.min.css">
+  <link rel="stylesheet" href="atlantis-lite/assets/css/fonts.min.css">
+  <link rel="stylesheet" href="css/site.css?v=20261126b">
+  <script src="js/theme.js"></script>
+</head>
+<body data-member-page="profile">
+  <div class="wrapper">
+    <div class="main-header">
+      <!-- Logo Header -->
+      <div class="logo-header" data-background-color="blue">
+        <a href="index.html" class="logo sw-member-logo-link">
+          <span class="sw-member-logo-badge" aria-hidden="true">SW</span>
+          <span>SOROTI WebWorks</span>
+        </a>
+        <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
+          data-target="collapse" aria-expanded="false" aria-label="Toggle sidebar navigation">
+          <span class="navbar-toggler-icon">
+            <i class="icon-menu" aria-hidden="true"></i>
+          </span>
+        </button>
+        <button class="topbar-toggler more" type="button" aria-label="Toggle topbar actions">
+          <i class="icon-options-vertical" aria-hidden="true"></i>
+        </button>
+        <div class="nav-toggle">
+          <button class="btn btn-toggle toggle-sidebar" type="button" aria-label="Collapse sidebar">
+            <i class="icon-menu" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Navbar Header -->
+      <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2" aria-label="Member topbar">
+        <div class="container-fluid">
+          <div class="text-white font-weight-bold d-none d-sm-block">
+            Members Area · Client Profile
+          </div>
+          <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+            <li class="nav-item mr-2">
+              <a class="nav-link text-white" href="index.html" title="Return to Public Site">
+                <i class="fas fa-home mr-1" aria-hidden="true"></i>
+                <span class="d-none d-md-inline">Public Site</span>
+              </a>
+            </li>
+            <li class="nav-item mr-2">
+              <button type="button" class="btn btn-outline-light btn-sm sw-theme-toggle" data-action="toggle-theme" aria-label="Switch to Dark Mode" aria-pressed="false">
+                <i class="fas fa-moon mr-1" aria-hidden="true"></i>
+                <span class="d-none d-sm-inline">Dark Mode</span>
+              </button>
+            </li>
+            <li class="nav-item dropdown hidden-caret">
+              <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false" aria-label="Account menu">
+                <div class="avatar-sm">
+                  <span class="avatar-title rounded-circle sw-avatar-royal" data-member-initials>SW</span>
+                </div>
+              </a>
+              <ul class="dropdown-menu dropdown-user animated fadeIn">
+                <div class="dropdown-user-scroll scrollbar-outer">
+                  <li>
+                    <div class="user-box">
+                      <div class="avatar-lg">
+                        <span class="avatar-title rounded sw-avatar-royal" data-member-initials>SW</span>
+                      </div>
+                      <div class="u-text">
+                        <h4 data-member-name>Loading...</h4>
+                        <p class="text-muted mb-1" data-member-email></p>
+                        <span class="badge badge-primary" data-member-role>Client</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="index.html">Go to Website</a>
+                    <a class="dropdown-item d-none" href="dashboard.html" data-admin-nav>Admin Dashboard</a>
+                    <div class="dropdown-divider"></div>
+                    <button type="button" class="dropdown-item text-danger" data-action="logout">
+                      <i class="fas fa-sign-out-alt mr-2" aria-hidden="true"></i>Logout
+                    </button>
+                  </li>
+                </div>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar sidebar-style-2">
+      <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+          <div class="user">
+            <div class="avatar-sm float-left mr-2">
+              <span class="avatar-title rounded-circle sw-avatar-royal" data-member-initials>SW</span>
+            </div>
+            <div class="info">
+              <a href="profile.html" aria-expanded="true">
+                <span>
+                  <span data-member-name>Member</span>
+                  <span class="user-level" data-member-role>Client</span>
+                </span>
+              </a>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <ul class="nav nav-primary">
+            <li class="nav-item" data-member-nav="profile">
+              <a href="profile.html">
+                <i class="fas fa-user" aria-hidden="true"></i>
+                <p>My Profile</p>
+              </a>
+            </li>
+            <li class="nav-item d-none" data-member-nav="dashboard" data-admin-nav>
+              <a href="dashboard.html">
+                <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
+                <p>Admin Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-section">
+              <span class="sidebar-mini-icon"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></span>
+              <h4 class="text-section">Public Pages</h4>
+            </li>
+            <li class="nav-item">
+              <a href="index.html">
+                <i class="fas fa-home" aria-hidden="true"></i>
+                <p>Home Page</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html">
+                <i class="fas fa-folder-open" aria-hidden="true"></i>
+                <p>Projects Completed</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html">
+                <i class="fas fa-layer-group" aria-hidden="true"></i>
+                <p>Web Services</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <p>Contact Us</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" data-action="toggle-theme" aria-label="Switch to Dark Mode" aria-pressed="false">
+                <i class="fas fa-moon" aria-hidden="true"></i>
+                <p>Dark Mode</p>
+              </a>
+            </li>
+            <li class="nav-item mt-3">
+              <a href="#" data-action="logout" class="text-danger">
+                <i class="fas fa-sign-out-alt text-danger" aria-hidden="true"></i>
+                <p class="text-danger">Logout</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Panel -->
+    <div class="main-panel">
+      <div class="content">
+        <div class="panel-header sw-member-panel-header">
+          <div class="page-inner py-4">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+              <div>
+                <h1 class="text-white pb-1 fw-bold h2 mb-0">
+                  Welcome, <span data-member-name>Member</span>
+                </h1>
+                <h2 class="text-white op-8 mb-2 h6 font-weight-normal">
+                  Manage your SOROTI WebWorks client account and review your web service requests.
+                </h2>
+              </div>
+              <div class="ml-md-auto py-2 py-md-0 d-flex flex-wrap align-items-center sw-btn-group-wrap">
+                <a href="index.html" class="btn btn-light btn-sm">Go to Website</a>
+                <a href="dashboard.html" class="btn btn-outline-light btn-sm d-none" data-admin-nav>Admin Dashboard</a>
+                <button type="button" class="btn btn-outline-light btn-sm" data-action="logout">
+                  <i class="fas fa-sign-out-alt mr-1" aria-hidden="true"></i>Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-inner mt--4">
+          <div id="profileAuthLoading" class="card mb-4" role="status">
+            <div class="card-body d-flex align-items-center text-muted">
+              <div class="spinner-border spinner-border-sm text-primary mr-3" role="presentation"></div>
+              <span>Verifying your session with Supabase...</span>
+            </div>
+          </div>
+
+          <div id="profileContent" class="d-none">
+            <!-- Summary Cards -->
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div class="icon-big text-center icon-primary bubble-shadow-small">
+                          <i class="fas fa-user-check" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ml-3 ml-sm-0">
+                        <div class="numbers">
+                          <p class="card-category">Account Role</p>
+                          <h3 class="card-title h5 mb-0" data-member-role>Client</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div class="icon-big text-center icon-info bubble-shadow-small">
+                          <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ml-3 ml-sm-0">
+                        <div class="numbers">
+                          <p class="card-category">Member Since</p>
+                          <h3 id="memberSinceValue" class="card-title h5 mb-0">-</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div class="icon-big text-center icon-success bubble-shadow-small">
+                          <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ml-3 ml-sm-0">
+                        <div class="numbers">
+                          <p class="card-category">My Service Orders</p>
+                          <h3 id="myEnrollmentsCount" class="card-title h5 mb-0">0</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Profile Form & Applications -->
+            <div class="row">
+              <div class="col-lg-7 mb-4">
+                <div class="card mb-0">
+                  <div class="card-header">
+                    <div class="card-title">Edit My Profile</div>
+                  </div>
+                  <div class="card-body">
+                    <form id="profileForm" autocomplete="on" novalidate>
+                      <div class="form-group">
+                        <label for="profileFullName" class="sw-form-label">
+                          Full Name <span class="sw-required-mark">*</span>
+                        </label>
+                        <input type="text" id="profileFullName" name="full_name" class="form-control" required
+                          minlength="2" maxlength="100" autocomplete="name"
+                          aria-describedby="profileFullNameError">
+                        <div id="profileFullNameError" class="invalid-feedback"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="profileEmail" class="sw-form-label">Registered Email</label>
+                        <input type="email" id="profileEmail" name="email" class="form-control"
+                          autocomplete="email" readonly>
+                        <small class="form-text text-muted">
+                          Email is managed by Supabase Auth.
+                        </small>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="profilePhone" class="sw-form-label">Phone Number</label>
+                        <input type="tel" id="profilePhone" name="phone" class="form-control" maxlength="20"
+                          autocomplete="tel" inputmode="tel" placeholder="e.g., 0789939643"
+                          aria-describedby="profilePhoneError">
+                        <div id="profilePhoneError" class="invalid-feedback"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="profileOrganisation" class="sw-form-label">Organisation / School</label>
+                        <input type="text" id="profileOrganisation" name="organisation" class="form-control" maxlength="120"
+                          autocomplete="organization" placeholder="Optional"
+                          aria-describedby="profileOrganisationError">
+                        <div id="profileOrganisationError" class="invalid-feedback"></div>
+                      </div>
+
+                      <button type="submit" id="saveProfileBtn" class="btn btn-primary">
+                        Save Profile Changes
+                      </button>
+
+                      <div id="profileSaveFeedback" class="alert d-none mt-3 mb-0" role="status" aria-live="polite"></div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-5 mb-4">
+                <div class="card mb-4">
+                  <div class="card-header">
+                    <div class="card-title">My Service Orders &amp; Packages</div>
+                  </div>
+                  <div class="card-body" id="myEnrollmentsBox">
+                    <p class="text-muted mb-0">Loading your service orders...</p>
+                  </div>
+                </div>
+
+                <div class="card mb-0">
+                  <div class="card-header">
+                    <div class="card-title">Registered Account Summary</div>
+                  </div>
+                  <div class="card-body">
+                    <dl class="row mb-3">
+                      <dt class="col-sm-4">Name</dt>
+                      <dd class="col-sm-8" data-member-name>-</dd>
+                      <dt class="col-sm-4">Email</dt>
+                      <dd class="col-sm-8" data-member-email>-</dd>
+                      <dt class="col-sm-4">Phone</dt>
+                      <dd class="col-sm-8" id="summaryMemberPhone">Not provided</dd>
+                      <dt class="col-sm-4">Organisation</dt>
+                      <dd class="col-sm-8" id="summaryMemberOrg">Not provided</dd>
+                      <dt class="col-sm-4 mb-0">Role</dt>
+                      <dd class="col-sm-8 mb-0"><span class="badge badge-primary" data-member-role>Client</span></dd>
+                    </dl>
+                    <div class="d-flex flex-wrap align-items-center sw-btn-group-wrap">
+                      <a href="index.html" class="btn btn-outline-royal btn-sm">
+                        Go to Website
+                      </a>
+                      <a href="dashboard.html" class="btn btn-outline-royal btn-sm d-none" data-admin-nav>
+                        Admin Dashboard
+                      </a>
+                      <button type="button" class="btn btn-danger btn-sm" data-action="logout">
+                        <i class="fas fa-sign-out-alt mr-1" aria-hidden="true"></i>Log Out
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="container-fluid">
+          <nav class="pull-left" aria-label="Footer links">
+            <ul class="nav">
+              <li class="nav-item"><a class="nav-link" href="index.html">SOROTI WebWorks</a></li>
+              <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="copyright ml-auto">
+            &copy; <span id="footerYear">2026</span> SOROTI WebWorks — Twinamasiko Jusper. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="atlantis-lite/assets/js/core/jquery.3.2.1.min.js"></script>
+  <script src="atlantis-lite/assets/js/core/popper.min.js"></script>
+  <script src="atlantis-lite/assets/js/core/bootstrap.min.js"></script>
+  <script src="atlantis-lite/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <script src="atlantis-lite/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="atlantis-lite/assets/js/atlantis.min.js"></script>
+  <script type="module" src="js/profile.js"></script>
+</body>
+</html>
